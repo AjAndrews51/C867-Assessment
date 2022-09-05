@@ -11,6 +11,7 @@ Student::Student() {
 	email = "";
 	age = 0;
 	this->daysInCourse = new int[3];
+	
 }
 
 Student::Student(string sUID, string Fname, string Lname, string email, int age, int dIC1, int dIC2, int dIC3, DegreeProgram type) {
@@ -23,6 +24,7 @@ Student::Student(string sUID, string Fname, string Lname, string email, int age,
 	daysInCourse[0] = dIC1;
 	daysInCourse[1] = dIC2;
 	daysInCourse[2] = dIC3;
+	this->degreeProgram = type;
 }
 
 Student::~Student() {
@@ -96,12 +98,9 @@ void Student::SetDaysCourseComplete(int* dIC) {
 void Student::print() {
 	int* tempdays = GetDaysInCourse();
 	string dPStr = "Software";
-	cout << dPStr << "\n";
-	 if (GetDegreeProgram() == DegreeProgram::SOFTWARE) dPStr = "Network";
+	 if (GetDegreeProgram() == DegreeProgram::SOFTWARE) dPStr = "Software";
 	 if (GetDegreeProgram() == DegreeProgram::NETWORK) dPStr = "Network";
-	cout << dPStr<<"\n" ;
 	if (GetDegreeProgram() == DegreeProgram::SECURITY) dPStr = "Security";
-	cout << dPStr <<"\n";
 	cout << "\t Student ID: " << GetsUID()
 		<< "\t First Name: " << GetFname()
 		<< "\t Last Name: " << GetLname()

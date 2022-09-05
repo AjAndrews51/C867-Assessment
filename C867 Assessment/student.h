@@ -29,6 +29,7 @@ public:
 	void Setemail(string email);
 	void SetAge(int age);
 	void SetDaysCourseComplete(int* daysInCourse);
+	void dtype(string type);
 	// Section D2e - print specific student data
 	void print();
 private:
